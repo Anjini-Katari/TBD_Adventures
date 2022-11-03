@@ -6,3 +6,6 @@ edited README; began devlog
 
 template:
 firstL -- 2022-11-02 23:59
+
+anjiniK -- 2022-11-03 06:55
+updated desgin doc and added it to the repo
