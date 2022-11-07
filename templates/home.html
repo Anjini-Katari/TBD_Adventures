@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+TBD's Adventures: Samantha Hua, Anjini Katari, and Emerson Gelobter
+SoftDev
+K19 -- Sessions Greetings
+2022-10-17
+time spent: 1hrs
+
+<button onclick=logout() method='post' type="submit">Logout</button>
+
+ -->
+
+
+<html>
+
+  <head>
+    <title> LOGIN PAGE </title>
+  </head>
+
+  <body>
+    <p>
+      TBD's Adventures: Samantha Hua, Anjini Katari, and Emerson Gelobter
+    </p>
+    <h1>
+      Welcome, Travelers of the Intertoobz!
+    </h1>
+
+    <h3>Your username is {{user}}</h3>
+    <p> You submitted a {{type}} request</p>
+    <p>{{msg}}</p>
+    <br>
+
+    <form action="/logout" method="post">
+      <button action="/logout" method="post" type="submit">logout</button>
+    </form>
+
+  </body>
+
+</html>
