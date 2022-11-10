@@ -6,18 +6,24 @@
 # Target ship date: {2022-11-15}
 
 import os
-from flask import Flask             #facilitate flask webserving
-from flask import render_template   #facilitate jinja templating
-from flask import request           #facilitate form submission
-from flask import session
+from flask import Flask, render_template, request, session
+import sqlite3
+  
+# Reading db
+
+DB_FILE="users.db"
+
+db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
+c = db.cursor()               #facilitate db ops -- you will use cursor to trigger db events
+
+# Initializing db
+c.execute("CREATE TABLE IF NOT EXISTS users(username TEXT, password TEXT;")
 
 
-#the conventional way:
-#from flask import Flask, render_template, request
 
 app = Flask(__name__)    #create Flask object
 
-app.secret_key = os.urandom(32)
+app.secret_key = os.urandom(32) #creates random secret key
 
 @app.route("/", methods=['GET', 'POST'])
 def disp_loginpage():
@@ -28,13 +34,16 @@ def disp_loginpage():
 
 @app.route("/newUser", methods=['GET','POST'])
 def addNewUser():
-    # if request.method == 'POST':
-    #     if !(request.form['username'] in session):
-    #
-    msg = "working on it"
+    msg = "An error occurred. Try again."
+    if request.method == 'POST':
+        if 'username' in request.form and 'password' in request.form:
+            # need to check the input to make sure it's valid
+            c.execute("INSERT INTO user VALUES('{}', '{}')".format(i['username'], i['password'])) # adds user pass combo into the db
+            #            c.execute("INSERT INTO user VALUES('{}', '{}')".format(i['username'], i['password'])) # adds user pass combo into the db
+            print(c.execute("SELECT * from users"))
     return render_template('login.html', msg=msg)
 
-@app.route("/auth", methods =['GET', 'POST'])
+@app.route("/login", methods =['GET', 'POST'])
 def authenticate():
     msg = ""
 
@@ -42,6 +51,7 @@ def authenticate():
     session['password'] = "y"
 
     if 'username' in request.form: # error otherwise because request.form could be empty
+
         if session['username'] == request.form['username']: # assumes username exists within session (it does rn because we hard code it)
             if session['password'] == request.form['password']:
                 msg = "you're logged in"
