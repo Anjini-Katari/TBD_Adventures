@@ -1,8 +1,9 @@
 # TBD's Adventures: Samantha Hua, Anjini Katari, and Emerson Gelobter
 # SoftDev
-# K12 -- Take and Give
-# 2022-10-17
+# P00 -- Blogs | Move Slowly and Fix Things
+# 2022-11-10
 # time spent: 1hrs
+# Target ship date: {2022-11-15}
 
 import os
 from flask import Flask             #facilitate flask webserving
