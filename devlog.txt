@@ -7,7 +7,6 @@ edited README; began devlog
 anjiniK -- 2022-11-03 06:55
 updated design doc and added it to the repo
 
-template:
 samanthaH -- 2022-11-09 19:19
 added team flag to repo
 
