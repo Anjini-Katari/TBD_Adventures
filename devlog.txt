@@ -10,5 +10,8 @@ updated design doc and added it to the repo
 samanthaH -- 2022-11-09 19:19
 added team flag to repo
 
+samanthaH -- 2022-11-09 20:37
+made the app work. simplified the work flow of logging out. 
+
 template:
 firstL -- 2022-11-02 23:59
