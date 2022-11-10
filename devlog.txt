@@ -4,8 +4,12 @@ created repo
 samanthaH -- 2022-22-3 00:02
 edited README; began devlog
 
+anjiniK -- 2022-11-03 06:55
+updated design doc and added it to the repo
+
+template:
+samanthaH -- 2022-11-09 19:19
+added team flag to repo
+
 template:
 firstL -- 2022-11-02 23:59
-
-anjiniK -- 2022-11-03 06:55
-updated desgin doc and added it to the repo
