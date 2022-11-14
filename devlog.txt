@@ -29,7 +29,7 @@ added team flag to repo
 
 samanthaH -- 2022-11-09 20:37
 --------------------------------------------------------------
-made the app work. simplified the work flow of logging out. 
+made the app work. simplified the work flow of logging out.
 ==============================================================
 
 anjiniK -- 2022-11-10 06:27
@@ -40,20 +40,25 @@ adjusted devlog formatting
 
 anjiniK -- 2022-11-13 23:48
 --------------------------------------------------------------
-created sign up button and connected it to the login page and 
-home page, realized the reason nothing was working was because 
-we didn't use db.commit() to save the changes (there were no 
+created sign up button and connected it to the login page and
+home page, realized the reason nothing was working was because
+we didn't use db.commit() to save the changes (there were no
 columns in the table...) and cried a little bit afterwards but
-we can sign up and log in now!! 
-next steps: 
-- made home, user and blog online 
+we can sign up and log in now!!
+next steps:
+- made home, user and blog online
 - potentially make things look pretty?
 ==============================================================
 
+samanthaH -- 2022-11-14 12:00
+--------------------------------------------------------------
+created navbar for pages so that all pages can be accessed from all the others
+reconfigured the processing of db info
+streamlined the login logout process
+==============================================================
 
 template:
 fristL -- TIMESTAMP
 --------------------------------------------------------------
 <Thing fristL did.>
 ==============================================================
-
