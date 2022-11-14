@@ -14,6 +14,13 @@ time spent: 1hrs
   </head>
 
   <body>
+    <p> navigate to other pages! </p>
+    <ul>
+      <li><form action="/newUser" method='get'><button name="action" type="submit">Add New User</button></form></li>
+      <li><form action="/home" method='get'><button name="action" type="submit">Home</button></form></li>
+      <!-- <li><form action="/login" method='get'><button name="action" type="submit">Login</button></form></li> -->
+    </ul>
+
     <p>
         TBD's Adventures: Samantha Hua, Anjini Katari, and Emerson Gelobter
     </p>
@@ -29,16 +36,11 @@ time spent: 1hrs
     <form action="/login" method='post'> <!-- connects front end and back end -->
         <input type="text" name="username">
         <input type="text" name="password">
-        <input type="submit" name="sub1"> <!-- submit button -->
+        <input type="submit" name="sub1">
     </form>
 
-    <form action="/signUp" method='post'> <!-- connects front end and back end -->
-      <button name="action" value="sign_up" type="submit">Sign up</button> <!-- sign up button -->
-  </form>
-
-    
-
     <br>
+
   </body>
 
 </html>
