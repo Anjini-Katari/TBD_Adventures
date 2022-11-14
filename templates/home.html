@@ -33,6 +33,11 @@ time spent: 1hrs
     <p> You submitted a {{type}} request</p>
     <p>{{msg}}</p>
     <br>
+    <form action="/addBlog" method='post'> <!-- connects front end and back end -->
+      <input type="text" name="newBlog">
+      <input type="submit" name="sub1">
+   </form>
+
 
     <form action="/logout" method="post">
       <button action="/logout" method="post" type="submit">logout</button>

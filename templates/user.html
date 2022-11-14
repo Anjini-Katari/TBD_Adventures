@@ -5,6 +5,14 @@
   </head>
 
   <body>
+    <p> navigate to other pages! </p>
+    <ul>
+      <!-- <li><form action="/newUser" method='get'><button name="action" type="submit">Add New User</button></form></li> -->
+      <li><form action="/home" method='get'><button type="submit">Home</button></form></li>
+      <li><form action="/" method='post'><button type="submit">Logout</button></form></li>
+      <!-- <li><form action="/login" method='get'><button name="action" type="submit">Login</button></form></li> -->
+
+    </ul>
     <p>
         TBD's Adventures: Samantha Hua, Anjini Katari, and Emerson Gelobter
     </p>
@@ -12,9 +20,13 @@
       Welcome, {{user}}!
     </h1>
 
-    <form action="/" method="post">
-      <button type="submit">logout</button>
-    </form>
+    <p> {{msg}}</p>
+
+    <form action="/addBlog" method='post'> <!-- connects front end and back end -->
+      <input type="text" name="blogName">
+      <input type="text" name="newBlog">
+      <input type="submit" name="sub1">
+   </form>
     <br>
 
   </body>

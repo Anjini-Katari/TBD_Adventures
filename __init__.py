@@ -17,10 +17,9 @@ db = sqlite3.connect(DB_FILE, check_same_thread=False) #open if file exists, oth
 c = db.cursor()               #facilitate db ops -- you will use cursor to trigger db events
 
 # Initializing db
-c.execute("DROP TABLE users")
 c.execute("CREATE TABLE IF NOT EXISTS users(username TEXT, password TEXT);")
+c.execute("CREATE TABLE IF NOT EXISTS blogs(username TEXT, blogName TEXT, entry TEXT);")
 db.commit() # unsure if this is the right place to put this. supposedly saves changes - according to prev hw
-
 
 app = Flask(__name__)    #create Flask object
 
@@ -56,11 +55,9 @@ def addNewUser():
 def authenticate():
     msg = ""
 
-    # session['username'] = "x" #hard coded username and password
-    # session['password'] = "y"
     print(list(c.execute("SELECT * from users;")))
     # print(list(c.execute("SELECT password from users where username = 'a';"))) # [('b',)]
-    pwd_check = c.execute("SELECT password from users where username = '{}'".format(request.form['username']))
+    pwd_check = c.execute("SELECT password from users where username = ".format(request.form['username']))
     try:
         if list(pwd_check)[0][0] == request.form['password']:
             session['username']=request.form['username']
@@ -71,27 +68,20 @@ def authenticate():
             msg = "your password is incorrect"
     except:
         msg = "could not find username in our database"
-    # if 'username' in request.form and 'password' in request.form: # error otherwise because request.form could be empty
-    #
-    #     if session['username'] == request.form['username']: # assumes username exists within session (it does rn because we hard code it)
-    #         if session['password'] == request.form['password']:
-    #             msg = "you're logged in"
-    #             return render_template( 'user.html', user=session['username'])  # response to a form submission
-    #         else:
-    #             msg = "you're not logged in because your password was wrong"
-    #             return render_template( 'login.html', msg=msg)
-    #     else:
-    #         if session['password'] == request.form['password']:
-    #             msg = "you're not logged in because your username was wrong"
-    #         else:
-    #             msg = "you're not logged in because your username and password were wrong"
-    #         return render_template( 'login.html', msg=msg)
+
     print("incorrect comparison")
     return render_template( 'login.html', msg=msg) # should not ever get to this point but just in case it does
 
 @app.route("/home", methods =['GET', 'POST'])
 def homepage():
     return "slay queen"
+
+@app.route("/addBlog", methods = ['GET','POST'])
+def newBlog():
+    if request.method == 'POST':
+        if 'newBlog' in request.form:
+            # c.execute("INSERT INTO blogs VALUES('{}', '{}', '{}')".format(session['username'],request.form['newBlog'], request.form['blogName'])")
+    return render_template("user.html", msg = "blog has been successfully created")
 
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
