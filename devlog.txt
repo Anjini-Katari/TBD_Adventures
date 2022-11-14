@@ -38,6 +38,18 @@ fixed heading in files, created and worked on requirements.txt,
 adjusted devlog formatting
 ==============================================================
 
+anjiniK -- 2022-11-13 23:48
+--------------------------------------------------------------
+created sign up button and connected it to the login page and 
+home page, realized the reason nothing was working was because 
+we didn't use db.commit() to save the changes (there were no 
+columns in the table...) and cried a little bit afterwards but
+we can sign up and log in now!! 
+next steps: 
+- made home, user and blog online 
+- potentially make things look pretty?
+==============================================================
+
 
 template:
 fristL -- TIMESTAMP
