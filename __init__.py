@@ -43,7 +43,8 @@ def addNewUser():
     msg = ""
     if request.method == 'POST':
         if 'username' in request.form and 'password' in request.form: # need to check the input to make sure it's valid
-            c.execute("INSERT INTO users VALUES('{}', '{}')".format(request.form['username'],request.form['password'])) # adds user pass combo into the db
+            passing = [request.form['username'], request.form['password']]
+            c.execute("INSERT INTO users VALUES (?, ?)", passing) # adds user pass combo into the db
             db.commit()
             print(list(c.execute("SELECT * from users;"))) # if it doesn't work try db.commit()
             return render_template('login.html', msg="successfully created account")
@@ -57,7 +58,8 @@ def authenticate():
 
     print(list(c.execute("SELECT * from users;")))
     # print(list(c.execute("SELECT password from users where username = 'a';"))) # [('b',)]
-    pwd_check = c.execute("SELECT password from users where username = ".format(request.form['username']))
+    passing = [request.form['username']]
+    pwd_check = c.execute("SELECT password from users where username = ?", passing)
     try:
         if list(pwd_check)[0][0] == request.form['password']:
             session['username']=request.form['username']
@@ -80,7 +82,9 @@ def homepage():
 def newBlog():
     if request.method == 'POST':
         if 'newBlog' in request.form:
-            # c.execute("INSERT INTO blogs VALUES('{}', '{}', '{}')".format(session['username'],request.form['newBlog'], request.form['blogName'])")
+            c.execute("INSERT INTO blogs VALUES('{}', '{}', '{}')".format(session['username'],request.form['newBlog'], request.form['blogName']))
+            return render_template("user.html", msg = "blog has been successfully created")
+
     return render_template("user.html", msg = "blog has been successfully created")
 
 if __name__ == "__main__": #false if this file imported as module
