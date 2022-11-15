@@ -1,17 +1,10 @@
 <!DOCTYPE html>
-<!--
-TBD's Adventures: Samantha Hua, Anjini Katari, and Emerson Gelobter
+<!-- TBD's Adventures: Samantha Hua, Anjini Katari, and Emerson Gelobter
 SoftDev
-K19 - Sessions Greetings
-2022-10-17
+P00 -- Blogs | Move Slowly and Fix Things
+2022-11-10
 time spent: 1hrs
-
-<ul>
-      <li><a href={{url_for('user')}}> Profile</a></li>
-      <li><a href={{url_for('home')}}> Home</a></li>
-      <li><a href={{url_for('login')}}> Logout</a></li>
-    </ul>
- -->
+Target ship date: {2022-11-15} -->
 
 <html>
 
@@ -29,19 +22,19 @@ time spent: 1hrs
       Welcome, Travelers of the Intertoobz!
     </h1>
 
-    <h3>Your username is {{user}}</h3>
-    <p> You submitted a {{type}} request</p>
-    <p>{{msg}}</p>
+    <ul>
+      <li><form action="/logout" method="post"><button type="submit">Logout</button></form></li>
+      <li><form action="/user" method='get'><button type="submit">User</button></form></li>
+    </ul>
     <br>
-    <form action="/addBlog" method='post'> <!-- connects front end and back end -->
-      <input type="text" name="newBlog">
-      <input type="submit" name="sub1">
-   </form>
+   <p>{{msg}}</p>
 
+   {% for blog in blogList %} 
+    <h4>{{blog[1]}} by {{blog[0]}}</h4>
+    <p>{{blog[2]}}</p>
+    <br>
+   {% endfor %}
 
-    <form action="/logout" method="post">
-      <button action="/logout" method="post" type="submit">logout</button>
-    </form>
 
   </body>
 

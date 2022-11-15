@@ -57,8 +57,24 @@ reconfigured the processing of db info
 streamlined the login logout process
 ==============================================================
 
-template:
-fristL -- TIMESTAMP
+samanthaH -- 2022-11-15 00:13
 --------------------------------------------------------------
-<Thing fristL did.>
+worked on home.html and used a sql query to gather all of the blogs in our db
+used a sql query to get userBlogs to display on the user page
+suggested to remove blog.html to streamline the user experience and because of the time crunch
+consolidated /user and /addBlog for simplicity
+saved old entry to be able to add onto blog entries
+discovered error where we were saving data into the db incorrectly
 ==============================================================
+
+anjiniK -- 2022-11-15 00:15
+--------------------------------------------------------------
+- worked on user.html
+- emerson and I worked on a lot of small bugs (username not working,
+  rendering page mishaps, etc)
+- figured out how to use the question marks! safe webbing for everyone!
+- concatenating a new entry with an old one 
+==============================================================
+
+note: Emerson worked alongside us but didn't fill out the devlog 
+as much as we did so it appears like he did nothing but he did.

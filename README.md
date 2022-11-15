@@ -1,4 +1,4 @@
-# <Project Name> by TBD's Adventures 
+# Text Adventures by TBD's Adventures 
 
 ## Roster:
  * Anjini Katari (PM) -- focusing on the Python scripts
@@ -7,11 +7,15 @@
  * ALL -- interweaving these components with one another
 
 ## Description of Website/App:
+This website will allow its user to sign up for an account,
+log into it, make their own blogs, and edit their
+blog posts. 
 
 ## Launch Codes:
 ### How to code/install:
  * Create and enter a virtual enviornment
- * In the command line, install flask by typing  ```pip3 install flask``` in the command line
+ * In the command line, install flask by typing  ```pip3 install flask```
+ * In the command line, install all of the required packages ```pip3 install -r requirements.txt``` 
 ### How to run:
- * To launch the sign in page, for the blog, run ```python3 __init__.py```
-    * In the web browser, go to http://127.0.0.1:5000 and sign in 
+ * To launch our blog, run ```cd app``` and ```python3 __init__.py```
+ * To see our site, go to http://127.0.0.1:5000 in your web browser

@@ -1,33 +1,49 @@
+<!DOCTYPE html>
+<!-- TBD's Adventures: Samantha Hua, Anjini Katari, and Emerson Gelobter
+SoftDev
+P00 -- Blogs | Move Slowly and Fix Things
+2022-11-10
+time spent: 1hrs
+Target ship date: {2022-11-15} -->
 <html>
 
   <head>
-    <title> LOGIN </title>
+    <title> User Page </title>
   </head>
 
   <body>
+    <p>
+      TBD's Adventures: Samantha Hua, Anjini Katari, and Emerson Gelobter
+    </p>
     <p> navigate to other pages! </p>
     <ul>
-      <!-- <li><form action="/newUser" method='get'><button name="action" type="submit">Add New User</button></form></li> -->
       <li><form action="/home" method='get'><button type="submit">Home</button></form></li>
-      <li><form action="/" method='post'><button type="submit">Logout</button></form></li>
-      <!-- <li><form action="/login" method='get'><button name="action" type="submit">Login</button></form></li> -->
+      <li><form action="/logout" method='post'><button type="submit">Logout</button></form></li>
 
+      <!-- <li><form action="/login" method='get'><button name="action" type="submit">Login</button></form></li> -->
     </ul>
-    <p>
-        TBD's Adventures: Samantha Hua, Anjini Katari, and Emerson Gelobter
-    </p>
+   
     <h1>
       Welcome, {{user}}!
     </h1>
 
-    <p> {{msg}}</p>
+    <p> {{msg}} </p>
+    <p> If you want to edit a blog you already created, simply type in the name of your blog and submit your new entry! It will add onto your previous entry</p>
 
-    <form action="/addBlog" method='post'> <!-- connects front end and back end -->
+    <form action="/user" method='post'> <!-- connects front end and back end -->
+      <p> Enter the name of your blog: </p>
       <input type="text" name="blogName">
-      <input type="text" name="newBlog">
+      <p> Enter the content of your blog: </p>
+      <input type="text" name="newEntry">
       <input type="submit" name="sub1">
    </form>
     <br>
+
+   {% for blog in blogList %} 
+    <h4>{{blog[1]}} by {{blog[0]}}</h4>
+    <p>{{blog[2]}}</p>
+    <br>
+   {% endfor %}
 
   </body>
 
