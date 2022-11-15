@@ -69,12 +69,20 @@ def disp_logoutpage():
     msg = ""
     
     if request.method == 'POST':
+<<<<<<< HEAD
         if 'username' in session:
             msg = "You have been successfully logged out"
             session.pop('username') # these are the fields within session that we want to remove
             session.pop('password')
         return render_template('login.html', msg=msg)
     return render_template( 'login.html', msg=msg)
+=======
+        if 'newBlog' in request.form and 'blogName' in request.form:
+            passing = [request.form['newBlog'], request.form['blogName']]
+            c.execute("INSERT INTO blogs VALUES (?, ?)", passing) # adds user pass combo into the db
+            db.commit()
+            return render_template("user.html", msg = "blog has been successfully created")
+>>>>>>> 27db13710a7abf24bed7747a39659d07163cc3a6
 
 @app.route("/user", methods =['GET', 'POST'])
 def userpage():
