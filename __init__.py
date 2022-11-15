@@ -81,8 +81,10 @@ def homepage():
 @app.route("/addBlog", methods = ['GET','POST'])
 def newBlog():
     if request.method == 'POST':
-        if 'newBlog' in request.form:
-            c.execute("INSERT INTO blogs VALUES('{}', '{}', '{}')".format(session['username'],request.form['newBlog'], request.form['blogName']))
+        if 'newBlog' in request.form and 'blogName' in request.form:
+            passing = [request.form['newBlog'], request.form['blogName']]
+            c.execute("INSERT INTO blogs VALUES (?, ?)", passing) # adds user pass combo into the db
+            db.commit()
             return render_template("user.html", msg = "blog has been successfully created")
 
     return render_template("user.html", msg = "blog has been successfully created")
